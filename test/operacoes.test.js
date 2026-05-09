@@ -81,8 +81,8 @@ describe('Suíte de Testes Fraca para 50 Operações Aritméticas', () => {
   test('33. deve verificar que um número é primo', () => {
     expect(isPrimo(7)).toBe(true);
     expect(isPrimo(4)).toBe(false);
-    expect(isPrimo(0)).toBe(false);
     expect(isPrimo(1)).toBe(false);
+    expect(isPrimo(0)).toBe(false);
     expect(isPrimo(-1)).toBe(false);
   });
   test('34. deve calcular o 10º termo de Fibonacci', () => { expect(fibonacci(10)).toBe(55); });
@@ -137,7 +137,6 @@ describe('Suíte de Testes Fraca para 50 Operações Aritméticas', () => {
     expect(medianaArray([3, 1, 2])).toBe(2);
     expect(medianaArray([3, 1, 4, 2])).toBe(2.5);
     expect(() => medianaArray([])).toThrow('Array vazio не possui mediana.');
-
   });
   test('48. deve calcular o dobro de um número', () => { expect(dobro(10)).toBe(20); });
   test('49. deve calcular o triplo de um número', () => { expect(triplo(10)).toBe(30); });
