@@ -30,7 +30,8 @@ describe('Suíte de Testes Fraca para 50 Operações Aritméticas', () => {
     expect(fatorial(4)).toBe(24);
     expect(fatorial(0)).toBe(1);
     expect(fatorial(1)).toBe(1);
-    expect(() => fatorial(-4)).toThrow('Fatorial não é definido para números negativos.');
+    expect(fatorial(2)).toBe(2);
+    expect(() => fatorial(-1)).toThrow('Fatorial não é definido para números negativos.');
   });
   test('9. deve calcular a média de um array com múltiplos elementos', () => {
     expect(mediaArray([10, 20, 30])).toBe(20);
@@ -89,11 +90,14 @@ describe('Suíte de Testes Fraca para 50 Operações Aritméticas', () => {
   test('35. deve calcular o produto de um array', () => {
     expect(produtoArray([2, 3, 4])).toBe(24);
     expect(produtoArray([])).toBe(1);
+    expect(produtoArray({ length: 0 })).toBe(1);
   });
   test('36. deve manter um valor dentro de um intervalo (clamp)', () => {
+    expect(clamp(-0, 0, 10)).toBe(-0);
+    expect(clamp(0, -10, -0)).toBe(0);
+    expect(clamp(-1, 0, 10)).toBe(0);
     expect(clamp(5, 0, 10)).toBe(5);
     expect(clamp(5, 5, 10)).toBe(5);
-    expect(clamp(-1, 0, 10)).toBe(0);
     expect(clamp(10, 0, 5)).toBe(5);
     expect(clamp(10, 0, 10)).toBe(10);
   });
